@@ -10,3 +10,6 @@ body {
 	justify-content: center;
 	margin: 0;
 }
+
+label {display:block;}
+textarea { display:block;}
