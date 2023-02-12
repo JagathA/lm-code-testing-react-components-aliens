@@ -21,13 +21,12 @@ describe("<Planetname>", () => {
 		When the component is rendered
 		Then the vaues passed in props should be present`, () => {
 			const mockChange = jest.fn();
-			const PlanetNameText = "Earth";
 			const requiredProps: PlanetNameProps = {
 				planetName: "Earth",
 				onChange: mockChange,
 			}
 			render(<PlanetName {...requiredProps} />);
-			expect(screen.getByDisplayValue(PlanetNameText)).toBeInTheDocument();
+			expect(screen.getByDisplayValue(requiredProps.planetName)).toBeInTheDocument();
 		});
 
 		test(`Given component is rendered, 
