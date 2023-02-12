@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface ReasonForSparingProps {
+export interface ReasonForSparingProps {
 	reasonForSparing: string;
 	onChange: (newValue:string) => void;
 }
