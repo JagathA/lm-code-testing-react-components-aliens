@@ -12,8 +12,8 @@ import SubmittedData from './SubmittedData';
 const W12MForm = () => {
 	const [speciesName, setSpeciesName] = useState<string>('humans');
 	const [planetName, setPlanetName] = useState<string>('Earth');
-	const [numberOfBeings, setNumberOfBeings] = useState<string>('A Lot');
-	const [twoPlusTwo, setTwoPlusTwo] = useState<string>('A Lot');
+	const [numberOfBeings, setNumberOfBeings] = useState<number>(0);
+	const [twoPlusTwo, setTwoPlusTwo] = useState<string>('4');
 	const [reasonForSparing, setReasonForSparing] = useState<string>('A Lot');
 	const [submitted, setSubmitted] = useState<boolean>(false);
 	

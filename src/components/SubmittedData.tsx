@@ -4,7 +4,7 @@ interface SubmittedDataProps {
 	submitted: boolean;
 	speciesName: string;
 	planetName: string;
-	numberOfBeings: string;
+	numberOfBeings: number;
 	twoPlusTwo: string;
 	reasonForSparing: string;
 }
