@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import PlanetName, { PlanetNameProps } from './PlanetName';
 import user from '@testing-library/user-event';
 
-describe("<Planetname>", () => {
+describe("<PlanetName>", () => {
 	const labelText = "Planet Name";
 
 	test(`Given the required props, 
