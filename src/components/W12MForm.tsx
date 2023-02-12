@@ -3,7 +3,7 @@ import W12MHeader from './W12MHeader';
 import SpeciesName from './SpeciesName';
 import PlanetName from './PlanetName';
 import NumberOfBeings from './NumberOfBeings';
-import TwoPlusTwo from './TwoPlusTwo';
+import TwoPlusTwo, {TwoPlusTwoAnswer} from './TwoPlusTwo';
 import ReasonForSparing from './ReasonForSparing';
 import SubmittedData from './SubmittedData';
 
@@ -13,7 +13,7 @@ const W12MForm = () => {
 	const [speciesName, setSpeciesName] = useState<string>('humans');
 	const [planetName, setPlanetName] = useState<string>('Earth');
 	const [numberOfBeings, setNumberOfBeings] = useState<number>(0);
-	const [twoPlusTwo, setTwoPlusTwo] = useState<string>('4');
+	const [twoPlusTwo, setTwoPlusTwo] = useState<TwoPlusTwoAnswer>('4');
 	const [reasonForSparing, setReasonForSparing] = useState<string>('A Lot');
 	const [submitted, setSubmitted] = useState<boolean>(false);
 	

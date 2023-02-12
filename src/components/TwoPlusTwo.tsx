@@ -1,14 +1,16 @@
 import React from 'react';
 
-interface TwoPlusTwoProps {
-	twoPlusTwo: string;
-	onChange: (newValue:string) => void;
+export type TwoPlusTwoAnswer = "4" | "Not 4";
+
+export interface TwoPlusTwoProps {
+	twoPlusTwo: TwoPlusTwoAnswer;
+	onChange: (newValue: TwoPlusTwoAnswer) => void;
 }
 
 const PlanetName: React.FC<TwoPlusTwoProps> = ({ twoPlusTwo, onChange}) => (
 	<>
-		<label htmlFor='twoPlusTwo'>Planet Name</label>
-		<select id='twoPlusTwo' value={twoPlusTwo} onChange={(e)=>onChange(e.target.value)}>
+		<label htmlFor='twoPlusTwo'>what is 2 + 2 ?</label>
+		<select id='twoPlusTwo' value={twoPlusTwo} onChange={(e)=>onChange(e.target.value as TwoPlusTwoAnswer)}>
 			<option id="0" >4</option>
 			<option id="1" >Not 4</option>
 		</select>
