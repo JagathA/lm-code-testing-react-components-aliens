@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import TwoPlusTwo, { TwoPlusTwoProps, TwoPlusTwoAnswer } from './TwoPlusTwo';
+import TwoPlusTwo, { TwoPlusTwoProps } from './TwoPlusTwo';
 import user from '@testing-library/user-event';
 
 describe("<TwoPlusTwo>", () => {
