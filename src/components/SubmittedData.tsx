@@ -16,11 +16,11 @@ const SubmittedData: React.FC<SubmittedDataProps> = (props) => {
 		return (<>
 			<section>
 				<h4> Submitted Data:</h4>
-				<p>{props.speciesName}</p>
-				<p>{props.planetName}</p>
-				<p>{props.numberOfBeings}</p>
-				<p>{props.twoPlusTwo}</p>
-				<p>{props.reasonForSparing}</p>
+				<p>Submitted Species Name: {props.speciesName}</p>
+				<p>Submitted Planet Name: {props.planetName}</p>
+				<p>Submitted Number Of Beings: {props.numberOfBeings}</p>
+				<p>Submitted what is 2+2?: {props.twoPlusTwo}</p>
+				<p>Submitted Reason For Sparing: {props.reasonForSparing}</p>
 			</section>
 
 		</>)
