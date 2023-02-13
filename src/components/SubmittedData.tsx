@@ -10,7 +10,6 @@ interface SubmittedDataProps {
 }
 
 const SubmittedData: React.FC<SubmittedDataProps> = (props) => {
-	console.log("submitted =>", props.submitted);
 
 	if (props.submitted) {
 		return (<>
