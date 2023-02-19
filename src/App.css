@@ -11,5 +11,15 @@ body {
 	margin: 0;
 }
 
-label {display:block;}
-textarea { display:block;}
+label {
+	display: block;
+}
+
+textarea {
+	display: block;
+}
+
+.red-text {
+	color: red;
+	font-weight: bold;
+}
