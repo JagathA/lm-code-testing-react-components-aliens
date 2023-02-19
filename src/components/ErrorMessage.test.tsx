@@ -6,14 +6,24 @@ describe("<ErrorMessage>", () => {
 
 	test(`Given the required props, 
 		When the component is rendered
-		Then the corrcet label text should be present`, () => {
+		Then the correct Error text should be present`, () => {
 	
 			const requiredProps: ErrorMessageProps = {
-				errorMessage: "Error: Serious problem has occured",
+				errorMessage: "ERROR: Serious problem has occured",
 			}
 			render(<ErrorMessage {...requiredProps} />);
 			expect(screen.getByText(`${requiredProps.errorMessage}`)).toBeInTheDocument();
 		});
 
+		test(`Given the required props, 
+		When the component is rendered
+		Then Error lebel text should not  present`, () => {
 	
+			const requiredProps: ErrorMessageProps = {
+				errorMessage: undefined,
+			}
+			render(<ErrorMessage {...requiredProps} />);
+			expect(screen.queryByText(`ERROR`)).not.toBeInTheDocument();
+		});
+
 	});
