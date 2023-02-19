@@ -48,9 +48,9 @@ const W12MForm = () => {
 				submitClicked();
 			}}>Submit</button>
 
-            <p>
+            <section>
 				<SubmittedData submitted = {submitted}  speciesName={speciesName} planetName={planetName} numberOfBeings={numberOfBeings} twoPlusTwo={twoPlusTwo} reasonForSparing={reasonForSparing}/>
-			</p>
+			</section>
 
 			{/* REST OF FORM GOES HERE */}
 		</section>
