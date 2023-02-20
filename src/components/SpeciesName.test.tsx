@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import SpeciesName, { SpeciesNameProps, errorSpeciesNameTooShort, errorSpeciesNameTooLong, errorSpeciesNameInvalidCharacters } from './SpeciesName';
 import user from '@testing-library/user-event';
-import userEvent from '@testing-library/user-event';
 
 describe("<SpeciesName>", () => {
 	const labelText = "Species Name";
