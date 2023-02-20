@@ -26,23 +26,23 @@ const W12MForm = () => {
 	return (
 		<section className='w12MForm'>
 			<W12MHeader />
-			<p>
+			<div>
 				<SpeciesName speciesName={speciesName} onChange={(newValue) => setSpeciesName(newValue)} />
-			</p>
-			<p>
+			</div>
+			<div>
 				<PlanetName planetName={planetName} onChange={(newValue) => setPlanetName(newValue)} />
-			</p>			
-			<p>
+			</div>			
+			<div>
 				<NumberOfBeings numberOfBeings={numberOfBeings} onChange={(newValue) => setNumberOfBeings(newValue)} />
-			</p>
+			</div>
 						
-			<p>
+			<div>
 				<TwoPlusTwo twoPlusTwo={twoPlusTwo} onChange={(newValue) => setTwoPlusTwo(newValue)} />
-			</p>
+			</div>
 
-			<p>
+			<div>
 				<ReasonForSparing reasonForSparing={reasonForSparing} onChange={(newValue) => setReasonForSparing(newValue)} />
-			</p>
+			</div>
 
 			<button type='submit' onClick={()=>{
 				submitClicked();
