@@ -48,11 +48,11 @@ describe("<SpeciesName>", () => {
 		An error message is not displayed`, async() => {
 			const mockChange = jest.fn();
 			const requiredProps: SpeciesNameProps = {
-				speciesName: "morethantwentythreecha",
+				speciesName: "thisIsAValidInpu",
 				onChange: mockChange,
 			}
 			render(<SpeciesName {...requiredProps} />);
-			await user.type(screen.getByLabelText(labelText),"m");
+			await user.type(screen.getByLabelText(labelText),"t");
 			expect(screen.queryByText(errorSpeciesNameTooLong)).not.toBeInTheDocument();
 			expect(screen.queryByText(errorSpeciesNameTooShort)).not.toBeInTheDocument();
 			expect(screen.queryByText(errorSpeciesNameInvalidCharacters)).not.toBeInTheDocument();
