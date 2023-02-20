@@ -21,8 +21,8 @@ describe("<W!2Form>", () => {
 	Then the confirm button should be present`, () => {
 		render(<W12MForm />);
 
-		const submitButton = 
-		screen.getAllByRole("button").find(b=>b.textContent ==="Submit");
+		const submitButton =
+			screen.getAllByRole("button").find(b => b.textContent === "Submit");
 
 		expect(submitButton).toBeInTheDocument();
 	});
@@ -34,13 +34,13 @@ describe("<W!2Form>", () => {
 
 		render(<W12MForm />);
 		userEvent.clear(screen.getByLabelText(LabelText));
-		await user.type(screen.getByLabelText(LabelText),"Humanoid");
+		await user.type(screen.getByLabelText(LabelText), "Humanoid");
 
-		const submitButton = 
-		screen.getAllByRole("button").find(b=>b.textContent ==="Submit");
+		const submitButton =
+			screen.getAllByRole("button").find(b => b.textContent === "Submit");
 
-		
-		if (submitButton){
+
+		if (submitButton) {
 			await userEvent.click(submitButton);
 		}
 
@@ -55,13 +55,13 @@ describe("<W!2Form>", () => {
 
 		render(<W12MForm />);
 		userEvent.clear(screen.getByLabelText(LabelText));
-		await user.type(screen.getByLabelText(LabelText),"Jupiter");
+		await user.type(screen.getByLabelText(LabelText), "Jupiter");
 
-		const submitButton = 
-		screen.getAllByRole("button").find(b=>b.textContent ==="Submit");
+		const submitButton =
+			screen.getAllByRole("button").find(b => b.textContent === "Submit");
 
-		
-		if (submitButton){
+
+		if (submitButton) {
 			await userEvent.click(submitButton);
 		}
 
@@ -71,17 +71,17 @@ describe("<W!2Form>", () => {
 	test(`When the submit button is pressed, 
 	Then the correct data for Number Of Beings is submitted`, async () => {
 
-		const LabelText =  "Number of Beings";
+		const LabelText = "Number of Beings";
 
 		render(<W12MForm />);
 		userEvent.clear(screen.getByLabelText(LabelText));
-		await user.type(screen.getByLabelText(LabelText),"123456789");
+		await user.type(screen.getByLabelText(LabelText), "123456789");
 
-		const submitButton = 
-		screen.getAllByRole("button").find(b=>b.textContent ==="Submit");
+		const submitButton =
+			screen.getAllByRole("button").find(b => b.textContent === "Submit");
 
-		
-		if (submitButton){
+
+		if (submitButton) {
 			await userEvent.click(submitButton);
 		}
 
@@ -95,13 +95,13 @@ describe("<W!2Form>", () => {
 
 		render(<W12MForm />);
 		//userEvent.clear(screen.getByLabelText(LabelText));
-		await user.selectOptions(screen.getByLabelText(LabelText),"4");
+		await user.selectOptions(screen.getByLabelText(LabelText), "4");
 
-		const submitButton = 
-		screen.getAllByRole("button").find(b=>b.textContent ==="Submit");
+		const submitButton =
+			screen.getAllByRole("button").find(b => b.textContent === "Submit");
 
-		
-		if (submitButton){
+
+		if (submitButton) {
 			await userEvent.click(submitButton);
 		}
 
@@ -116,13 +116,13 @@ describe("<W!2Form>", () => {
 		render(<W12MForm />);
 		userEvent.clear(screen.getByLabelText(LabelText));
 		const reasonForSparing = "This is a load of gibberish. But I hope it will work"
-		await user.type(screen.getByLabelText(LabelText),reasonForSparing);
+		await user.type(screen.getByLabelText(LabelText), reasonForSparing);
 
-		const submitButton = 
-		screen.getAllByRole("button").find(b=>b.textContent ==="Submit");
+		const submitButton =
+			screen.getAllByRole("button").find(b => b.textContent === "Submit");
 
-		
-		if (submitButton){
+
+		if (submitButton) {
 			await userEvent.click(submitButton);
 		}
 
@@ -130,6 +130,6 @@ describe("<W!2Form>", () => {
 	});
 
 
-	
+
 
 })
