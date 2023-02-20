@@ -92,12 +92,24 @@ describe("<SpeciesName>", () => {
 		The correct error message is displayed`, async() => {
 			const mockChange = jest.fn();
 			const requiredProps: SpeciesNameProps = {
-				speciesName: "morethantwentythreec",
+				speciesName: "lessthantwentythreec",
 				onChange: mockChange,
 			}
 			render(<SpeciesName {...requiredProps} />);
-			userEvent.clear(screen.getByLabelText(labelText));
 			await user.type(screen.getByLabelText(labelText),"6");
+			expect(screen.getByText(errorSpeciesNameInvalidCharacters)).toBeInTheDocument();
+		});
+
+		test(`Given use inputs an invalid inputs for Species name (special character), 
+		when the component is rendered,
+		The correct error message is displayed`, async() => {
+			const mockChange = jest.fn();
+			const requiredProps: SpeciesNameProps = {
+				speciesName: "lessthantwentythreec",
+				onChange: mockChange,
+			}
+			render(<SpeciesName {...requiredProps} />);
+			await user.type(screen.getByLabelText(labelText),"?");
 			expect(screen.getByText(errorSpeciesNameInvalidCharacters)).toBeInTheDocument();
 		});
 
