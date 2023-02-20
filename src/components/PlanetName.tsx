@@ -18,30 +18,30 @@ export const errorPlanetNameInvalidCharacters = `${errLbl} No numbers or special
 const PlanetName: React.FC<PlanetNameProps> = ({ planetName, onChange }) => {
 
 	const [errorMessage, setErrorMessage] =
-	useState<string | undefined>(undefined);
+		useState<string | undefined>(undefined);
 
-const validate: (value: string) => string | undefined = (value) => {
-	const reg = /^[a-z0-9]+$/i;
-	
-	if (value.length > 0) {
-		if (!reg.test(value)) {
-			return errorPlanetNameInvalidCharacters;
+	const validate: (value: string) => string | undefined = (value) => {
+		const reg = /^[a-z0-9]+$/i;
+
+		if (value.length > 0) {
+			if (!reg.test(value)) {
+				return errorPlanetNameInvalidCharacters;
+			}
+			else if (value.length < PLANET_NAME_MIN_LENGTH) {
+				return errorPlanetNameTooShort;
+			}
+			else if (value.length > PLANET_NAME_MAX_LENGTH) {
+				return errorPlanetNameTooLong;
+			}
 		}
-		else if (value.length < PLANET_NAME_MIN_LENGTH) {
-			return errorPlanetNameTooShort;
-		}
-		else if (value.length > PLANET_NAME_MAX_LENGTH) {
-			return errorPlanetNameTooLong;
-		}
+
+		return undefined;
 	}
 
-	return undefined;
-}
-
 	return (
-	<>
-		<label htmlFor='planetName'>Planet Name</label>
-		<input id='planetName' type='text' value={planetName} onChange={
+		<>
+			<label htmlFor='planetName'>Planet Name</label>
+			<input id='planetName' type='text' value={planetName} onChange={
 				(e) => {
 					const errorMessage = validate(e.target.value);
 					setErrorMessage(errorMessage);
@@ -49,6 +49,6 @@ const validate: (value: string) => string | undefined = (value) => {
 				}}
 			/>
 			<ErrorMessage errorMessage={errorMessage} />
-	</>);
+		</>);
 }
 export default PlanetName;

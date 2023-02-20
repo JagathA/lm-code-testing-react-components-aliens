@@ -59,43 +59,42 @@ describe("<PlanetName>", () => {
 
 	test(`Given use inputs an invalid inputs for Planet name (less than 3 characters), 
 		when the component is rendered,
-		The correct error message is displayed`, async() => {
-			const mockChange = jest.fn();
-			const requiredProps: PlanetNameProps = {
-				planetName: "",
-				onChange: mockChange,
-			}
-			render(<PlanetName {...requiredProps} />);
-			await user.type(screen.getByLabelText(labelText),"e");
-			expect(screen.getByText(errorPlanetNameTooShort)).toBeInTheDocument();
-		});
+		The correct error message is displayed`, async () => {
+		const mockChange = jest.fn();
+		const requiredProps: PlanetNameProps = {
+			planetName: "",
+			onChange: mockChange,
+		}
+		render(<PlanetName {...requiredProps} />);
+		await user.type(screen.getByLabelText(labelText), "e");
+		expect(screen.getByText(errorPlanetNameTooShort)).toBeInTheDocument();
+	});
 
 
-		test(`Given use inputs an invalid inputs for Planet name (More than 23 characters), 
+	test(`Given use inputs an invalid inputs for Planet name (More than 23 characters), 
 		when the component is rendered,
-		The correct error message is displayed`, async() => {
-			const mockChange = jest.fn();
-			const requiredProps: PlanetNameProps = {
-				planetName: "morethanThirtyNineCharacters12345678901234567890R",
-				onChange: mockChange,
-			}
-			render(<PlanetName {...requiredProps} />);
-			await user.type(screen.getByLabelText(labelText),"m");
-			expect(screen.getByText(errorPlanetNameTooLong)).toBeInTheDocument();
-		});
+		The correct error message is displayed`, async () => {
+		const mockChange = jest.fn();
+		const requiredProps: PlanetNameProps = {
+			planetName: "morethanThirtyNineCharacters12345678901234567890R",
+			onChange: mockChange,
+		}
+		render(<PlanetName {...requiredProps} />);
+		await user.type(screen.getByLabelText(labelText), "m");
+		expect(screen.getByText(errorPlanetNameTooLong)).toBeInTheDocument();
+	});
 
-		test(`Given use inputs an invalid inputs for Planet name (special character), 
+	test(`Given use inputs an invalid inputs for Planet name (special character), 
 		when the component is rendered,
-		The correct error message is displayed`, async() => {
-			const mockChange = jest.fn();
-			const requiredProps: PlanetNameProps = {
-				planetName: "morethantwentythreec",
-				onChange: mockChange,
-			}
-			render(<PlanetName {...requiredProps} />);
-			//userEvent.clear(screen.getByLabelText(labelText));
-			await user.type(screen.getByLabelText(labelText),"*");
-			expect(screen.getByText(errorPlanetNameInvalidCharacters)).toBeInTheDocument();
-		});
+		The correct error message is displayed`, async () => {
+		const mockChange = jest.fn();
+		const requiredProps: PlanetNameProps = {
+			planetName: "morethantwentythreec",
+			onChange: mockChange,
+		}
+		render(<PlanetName {...requiredProps} />);
+		await user.type(screen.getByLabelText(labelText), "*");
+		expect(screen.getByText(errorPlanetNameInvalidCharacters)).toBeInTheDocument();
+	});
 
 });
